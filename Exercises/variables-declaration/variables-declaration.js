@@ -11,6 +11,8 @@ for (let firstOne = 0; firstOne <= 2; firstOne++) {
   if (firstOne === 1) {
     secondOne = firstOne;
     console.log(`Second variable should be reassigned to value: ${secondOne}`);
+    let encapsulatedOne = 'Some string';
+    console.log(encapsulatedOne);
   } else {
     if (firstOne >= 2) {
       secondOne = 'too large';

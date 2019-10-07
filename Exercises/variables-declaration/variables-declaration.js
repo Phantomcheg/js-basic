@@ -1,12 +1,13 @@
 // 1. Declare a variable which will be encapsulated from global scope.
 // 3. Declare two variables which will be same-names but contain different values.
 let firstOne = 0;
-let secondOne;
+let secondOne = 'Some number';
+console.log(secondOne);
 
-for (firstOne; firstOne <= 2; firstOne++) {
+for (let firstOne = 0; firstOne <= 2; firstOne++) {
   if (firstOne === 1) {
     secondOne = firstOne;
-    console.log(`I'm really looking for the number: ${secondOne}`);
+    console.log(`Second variable should be reassigned to value: ${secondOne}`);
   } else {
     if (firstOne >= 2) {
       secondOne = 'too large';

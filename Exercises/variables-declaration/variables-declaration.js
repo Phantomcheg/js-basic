@@ -1,8 +1,11 @@
 // 1. Declare a variable which will be encapsulated from global scope.
 // 3. Declare two variables which will be same-names but contain different values.
-let firstOne = 0;
+let firstOne = 200;
 let secondOne = 'Some number';
-console.log(secondOne);
+console.log(firstOne);
+
+firstOne = secondOne;
+console.log(firstOne);
 
 for (let firstOne = 0; firstOne <= 2; firstOne++) {
   if (firstOne === 1) {

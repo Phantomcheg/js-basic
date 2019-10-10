@@ -24,6 +24,7 @@ dataTypes.forEach((item) => {
 
 const constructDataTypes = [ constructNumber, constructString, constructBool, constructArr, constructObj ];
 
+// Just to show that type of all elements will be objects
 constructDataTypes.forEach((newItem) => {
   console.log(typeof newItem);
 });
@@ -50,49 +51,14 @@ console.log(myPhone);
 // # Additional
 // 1. Declare an array containing different data types.
 
-const arr = [ 'test1', 6, true, { name: 'John' }, 18, 'test2', false, null ];
+const arr = [ 'test1', 6, Symbol('lol'), true, {}, 18, 'anyText', 'test2', false, null, undefined ];
 
 // 2. Iterate through it and collect amount of each data type to object.
-// TODO Need to be refactored
-const someTest = {};
 
-arr.forEach((item) => {
-  if (typeof item === 'string') {
-    if (someTest.strings) {
-      someTest.strings++;
-    } else {
-      someTest.strings = 1;
-    }
-  }
-  if (typeof item === 'number') {
-    if (someTest.numbers) {
-      someTest.numbers++;
-    } else {
-      someTest.numbers = 1;
-    }
-  }
-  if (typeof item === 'boolean') {
-    if (someTest.bools) {
-      someTest.bools++;
-    } else {
-      someTest.bools = 1;
-    }
-  }
-  if (typeof item === 'object') {
-    if (someTest.objects) {
-      someTest.objects++;
-    } else {
-      someTest.objects = 1;
-    }
-  }
+const finalObject = {};
+
+arr.forEach((arrayItem) => {
+  finalObject[typeof arrayItem] = (finalObject[typeof arrayItem] || null) + 1;
 });
 
-console.log(someTest);
-
-const objWithDataTypes = {};
-const obj = Object.assign(objWithDataTypes, arr);
-console.log(obj);
-
-for (let i = 0; i <= arr.length - 1; i++) {
-  console.log(obj[i]);
-}
+console.log(finalObject);

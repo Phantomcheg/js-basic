@@ -58,7 +58,7 @@ const arr = [ 'test1', 6, Symbol('lol'), true, {}, 18, 'anyText', 'test2', false
 const finalObject = {};
 
 arr.forEach((arrayItem) => {
-  finalObject[typeof arrayItem] = (finalObject[typeof arrayItem] || null) + 1;
+  finalObject[typeof arrayItem] = (finalObject[typeof arrayItem] || 0) + 1;
 });
 
 console.log(finalObject);

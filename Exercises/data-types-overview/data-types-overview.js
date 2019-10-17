@@ -1,5 +1,5 @@
 // 1. Declare a variable on each type using two options: plain creation, creation with constructor.
-
+/* eslint-disable no-new-wrappers, no-new-object, no-array-constructor */
 const someNumber = 99;
 const someString = 'testString';
 const someBool = true;
@@ -11,18 +11,18 @@ const someSymbol = Symbol('test');
 const constructNumber = new Number(10);
 const constructString = new String('text');
 const constructBool = new Boolean(true);
-const constructArr = new Array;
+const constructArr = new Array();
 const constructObj = new Object();
 
 // 2. Use operator typeof on each of them.
 
-const dataTypes = [ someNumber, someString, someBool, someEmpty, someUnknown, someObj, someSymbol ];
+const dataTypes = [someNumber, someString, someBool, someEmpty, someUnknown, someObj, someSymbol];
 
 dataTypes.forEach((item) => {
   console.log(typeof item);
 });
 
-const constructDataTypes = [ constructNumber, constructString, constructBool, constructArr, constructObj ];
+const constructDataTypes = [constructNumber, constructString, constructBool, constructArr, constructObj];
 
 // Just to show that type of all elements will be objects
 constructDataTypes.forEach((newItem) => {
@@ -51,7 +51,7 @@ console.log(myPhone);
 // # Additional
 // 1. Declare an array containing different data types.
 
-const arr = [ 'test1', 6, Symbol('lol'), true, {}, 18, 'anyText', 'test2', false, null, undefined ];
+const arr = ['test1', 6, Symbol('lol'), true, {}, 18, 'anyText', 'test2', false, null, undefined];
 
 // 2. Iterate through it and collect amount of each data type to object.
 

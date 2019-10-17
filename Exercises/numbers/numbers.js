@@ -12,7 +12,7 @@ console.log(hex);
 
 // 2. Implement function `extractNumbers` which will leave only numbers in passed string.
 
-function extractNumbers (text) {
+function extractNumbers(text) {
   const checkInt = parseFloat(text);
   if (isNaN(checkInt)) {
     return null;
@@ -40,7 +40,7 @@ console.log(hexFromDecimal);
 // 4. use `Math.random` to generate random value from `0` to `100`.
 
 function randomNumber(min, max) {
-  return min + Math.floor(Math.random() * (max - min + 1));
+  return min + Math.floor(Math.random() * ((max - min) + 1));
 }
 
 const roundedRandomDecimal = Math.round(randomNumber(1, 100));
@@ -56,12 +56,12 @@ function averageNumberFromArray(array) {
   array.forEach((arrayItem) => {
     summary += parseInt(arrayItem, 16);
   });
-  return (summary/array.length).toFixed(3);
+  return (summary / array.length).toFixed(3);
 }
 
 const arrayForCalc = [];
 for (let i = 0; i <= randomNumber(0, 10); i++) {
-  let hexNumber = randomNumber(100, 200).toString(16);
+  const hexNumber = randomNumber(100, 200).toString(16);
   arrayForCalc.push(hexNumber);
 }
 

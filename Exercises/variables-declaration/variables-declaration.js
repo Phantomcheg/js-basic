@@ -1,5 +1,6 @@
 // 1. Declare a variable which will be encapsulated from global scope.
 // 3. Declare two variables which will be same-names but contain different values.
+/* eslint-disable no-undef, no-var, vars-on-top, no-use-before-define */
 let firstOne = 200;
 let secondOne = 'Some number';
 console.log(firstOne);
@@ -11,7 +12,7 @@ for (let firstOne = 0; firstOne <= 2; firstOne++) {
   if (firstOne === 1) {
     secondOne = firstOne;
     console.log(`Second variable should be reassigned to value: ${secondOne}`);
-    let encapsulatedOne = 'Some string';
+    const encapsulatedOne = 'Some string';
     console.log(encapsulatedOne);
   } else {
     if (firstOne >= 2) {
@@ -45,4 +46,4 @@ const secondHosting = () => {
 };
 secondHosting();
 
-var someValue;
+let someValue;

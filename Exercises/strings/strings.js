@@ -36,21 +36,31 @@ console.log(convertToCapitalLetters(favouriteWriter));
 // - should contain at leas one special character.
 
 function validatePassword(password) {
+  let suggestedPassword = password;
+  const valid = true;
   if (typeof password === 'string') {
-    if (password.length < 8) {
-      console.log('Length should be no less than 8 characters');
-    }
     if (!password.match(/[A-Z]/)) {
       console.log('Password should contain at least one capital letter');
+      suggestedPassword = suggestedPassword[0].toUpperCase();
     }
     if (!password.match(/[#?!@$%^&*-.,]/)) {
       console.log('Password should contain at least one special character');
+      const symbols = '#?!@$%^&*-.,';
+      let retVal = '';
+      for (let i = 0, n = symbols.length; i < 2; ++i) {
+        retVal += symbols.charAt(Math.floor(Math.random() * n));
+      }
+      suggestedPassword = `${suggestedPassword}${retVal}`;
+      return suggestedPassword;
+    }
+    if (password.length < 8) {
+      console.log('Length should be no less than 8 characters');
     }
     return console.log(`Your password '${password}' is strong enough`);
   }
   console.log('Only strings available');
 }
-validatePassword('Some21@@');
+console.log(validatePassword('qQe'));
 
 // 2. Make function which will generate password suggestion based on passed password, and required strongest.
 
